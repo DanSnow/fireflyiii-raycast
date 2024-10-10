@@ -1,3 +1,1 @@
-# FireflyIII
-
-Firefly III
+# FireflyIII Raycast Extension

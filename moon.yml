@@ -1,0 +1,34 @@
+tasks:
+  build:
+    command:
+      - ray
+      - build
+      - --skip-types
+      - -e
+      - dist
+      - -o
+      - dist
+    deps:
+      - ^:build
+    outputs:
+      - dist
+    platform: node
+  dev:
+    command:
+      - ray
+      - develop
+    local: true
+    deps:
+      - ^:build
+    platform: node
+  fix-lint:
+    command:
+      - ray
+      - lint
+      - --fix
+    platform: node
+  lint:
+    command:
+      - ray
+      - lint
+    platform: node

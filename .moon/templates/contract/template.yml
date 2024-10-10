@@ -1,0 +1,8 @@
+title: Contract
+description: '@ts-rest/core contract'
+destination: packages/fireflyiii-client/src
+variables:
+  name:
+    type: string
+    required: true
+    prompt: Contract name?

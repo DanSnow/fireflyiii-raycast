@@ -1,0 +1,20 @@
+{
+  "name": "fireflyiii-client",
+  "packageManager": "yarn@4.5.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "dependencies": {
+    "@ts-rest/core": "^3.51.0",
+    "ofetch": "^1.4.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  }
+}

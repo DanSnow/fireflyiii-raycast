@@ -1,0 +1,15 @@
+import { initContract } from '@ts-rest/core';
+import { z } from 'zod';
+import {
+  BadRequestResponse,
+  InternalExceptionResponse,
+  NotFoundResponse,
+  UnauthenticatedResponse,
+  ValidationErrorResponse,
+} from '../schema/error-response';
+
+const c = initContract();
+
+export const {{ name | camel_case }}Contract = c.router({
+  // contract
+})

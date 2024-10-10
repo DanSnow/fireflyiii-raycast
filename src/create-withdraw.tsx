@@ -50,9 +50,30 @@ export default function Command() {
         }
       },
     },
-    onSubmit: (values) => {
-      console.log(values);
-      showToast({ title: 'Submitted form', message: 'See logs for submitted values' });
+    onSubmit: async (values) => {
+      const res = await client.transaction.storeTransaction({
+        body: {
+          transactions: [
+            {
+              type: 'withdrawal',
+              amount: values.amount,
+              description: values.description,
+              date: new Date().toISOString(),
+              source_id: values.source,
+              destination_id: values.target,
+            },
+          ],
+        },
+      });
+      if (res.status === 200) {
+        showToast({ title: 'Success', message: 'Transaction created' });
+      } else {
+        console.error(res);
+        showToast({
+          title: 'Failed',
+          message: 'Fail to create transaction',
+        });
+      }
     },
   });
 
